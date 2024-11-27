@@ -38,26 +38,22 @@ void	freesplit(char **col, int wc)
 	free(col);
 }
 
-static	t_point	*get_col(t_file *data, char **col)
+static	void	get_col(t_file *data, char **col)
 {
-	t_point	*temp;
 	int		i;
 
 	i = -1;
-	temp = NULL;
 	while (col[++i])
 		data->column++;
-	return (temp);
 }
 
 static	int	set_row(t_file *data, char **col)
 {
-	t_point	*temp;
 	int		i;
 
 	i = -1;
 	if (data->column == 0)
-		temp = get_col(data, col);
+		get_col(data, col);
 	while (col[++i])
 	{
 		if (data->member >= data->empty)
@@ -67,8 +63,8 @@ static	int	set_row(t_file *data, char **col)
 		data->points[data->member].y = data->row * SCALE;
 		data->points[data->member].z = ft_atoi(col[i]) / Z_SCALE;
 		data->points[data->member].color.clr = ft_puthex(
-				ft_strchr(col[i], ','), data);
-		if (ft_puthex(ft_strchr(col[i], ','), data) < 0)
+				ft_strchr(col[i], ','));
+		if (ft_puthex(ft_strchr(col[i], ',')) < 0)
 			return (freesplit(col, i), -1);
 		data->member++;
 		free(col[i]);
@@ -80,13 +76,12 @@ static	int	set_row(t_file *data, char **col)
 int	get_values(char *argv, t_file *data)
 {
 	t_get_val	get_val;
-	int			i;
 
-	i = -1;
 	get_val.file_f = ft_strrchr(argv, '.');
-	while (++i < 4)
-		if (!get_val.file_f && get_val.file_f[i] != FORMAT[i])
-			return (-4);
+	if (!get_val.file_f)
+		return (-4);
+	if (ft_strncmp(get_val.file_f, FORMAT, 5))
+		return (-4);
 	data->fd = open(argv, O_RDONLY);
 	if (data->fd < 0)
 		return (-3);

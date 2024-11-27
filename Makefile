@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: abturan <abturan@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/25 16:33:29 by abturan           #+#    #+#              #
-#    Updated: 2024/11/27 17:08:30 by abturan          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = fdf
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -17,12 +5,12 @@ LIBFT = libs/libft/libft.a
 GNL = libs/get_next_line/get_next_line.a
 MINILIBX = libs/minilibx-linux/libmlx_Linux.a
 
-SRCS =  srcs/*.c
+SRCS = srcs/*.c
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(GNL) $(MINILIBX)
-	$(CC) $(CFLAGS) $(SRCS) \
+	@$(CC) $(CFLAGS) $(SRCS) \
 	-I./includes \
 	\
 	-I./libs/libft \
@@ -34,6 +22,7 @@ $(NAME): $(LIBFT) $(GNL) $(MINILIBX)
 	\
 	-L./libs/minilibx-linux \
 	-lmlx -lX11 -lXext -lm -o fdf
+	@echo compiled
 
 $(LIBFT):
 	@make -sC libs/libft
@@ -42,8 +31,8 @@ $(GNL):
 	@make -sC libs/get_next_line
 
 $(MINILIBX):
-	@git clone https://github.com/42Paris/minilibx-linux.git libs/minilibx-linux  
-	@make -sC libs/minilibx-linux
+	@git clone https://github.com/42Paris/minilibx-linux.git libs/minilibx-linux
+	@make -sC libs/minilibx-linux 1> /dev/null 2> /dev/null
 
 clean:
 	@make fclean -sC libs/libft

@@ -6,7 +6,7 @@
 /*   By: abturan <abturan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:02:37 by abturan           #+#    #+#             */
-/*   Updated: 2024/11/25 17:17:41 by abturan          ###   ########.fr       */
+/*   Updated: 2024/11/27 17:19:36 by abturan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	index_hex(char ch)
 	return (-1);
 }
 
-int	ft_puthex(char *str, t_file *data)
+int	ft_puthex(char *str)
 {
 	int	hex_val;
 	int	result;

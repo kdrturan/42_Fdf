@@ -6,7 +6,7 @@
 /*   By: abturan <abturan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:17:27 by abturan           #+#    #+#             */
-/*   Updated: 2024/11/25 19:26:44 by abturan          ###   ########.fr       */
+/*   Updated: 2024/11/27 18:54:48 by abturan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	get_center(t_file *file)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < file->member)
 	{
-		file->points[i].x += WIDTH / 2 + (file->column * SCALE / 2);
+		file->points[i].x += WIDTH / 2;
 		file->points[i].y += HEIGHT / 2 - (file->row * SCALE / 2);
 		i++;
 	}

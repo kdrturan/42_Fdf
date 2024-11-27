@@ -6,7 +6,7 @@
 /*   By: abturan <abturan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:15:32 by abturan           #+#    #+#             */
-/*   Updated: 2024/11/25 17:17:10 by abturan          ###   ########.fr       */
+/*   Updated: 2024/11/27 17:20:04 by abturan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static	void	apply_rot_matrix_pt(t_point *point, float x, float y, float z)
 	float	matrix[4][4];
 	float	x_new;
 	float	y_new;
-	float	z_new;
 
 	x = x * (3.14f / 180);
 	y = y * (3.14f / 180);

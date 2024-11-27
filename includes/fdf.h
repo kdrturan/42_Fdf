@@ -6,7 +6,7 @@
 /*   By: abturan <abturan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:33:16 by abturan           #+#    #+#             */
-/*   Updated: 2024/11/25 19:36:18 by abturan          ###   ########.fr       */
+/*   Updated: 2024/11/27 18:53:17 by abturan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 # define WIDTH		3000
 # define HEIGHT		2000
-# define SCALE		5
+# define SCALE		50
 # define Z_SCALE	0.7
 # define TITLE		"Hello Fdf!"
 # define FORMAT		".fdf"
@@ -120,8 +120,7 @@ int		key_control(int key_code, t_mlx *param);
 void	error_control(int cntrl, t_mlx *param);
 void	apply_rot_matrix_map(t_file *file);
 int		index_hex(char ch);
-int		ft_puthex(char *str, t_file *data);
+int		ft_puthex(char *str);
 void	get_center(t_file *file);
-
 
 #endif

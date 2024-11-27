@@ -6,7 +6,7 @@
 /*   By: abturan <abturan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:13:20 by abturan           #+#    #+#             */
-/*   Updated: 2024/11/25 19:31:01 by abturan          ###   ########.fr       */
+/*   Updated: 2024/11/27 18:54:25 by abturan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	init_program(t_mlx *mlx_st, char *argv)
 	cntrl = get_values(argv, mlx_st->file);
 	if (cntrl < 0)
 		error_control(cntrl, mlx_st);
-		
 	get_center(mlx_st->file);
 	apply_rot_matrix_map(mlx_st->file);
 	draw_map(mlx_st->data, mlx_st->file);
@@ -57,7 +56,7 @@ int	main(int argc, char *argv[])
 	t_mlx	mlx_st;
 	t_data	data;
 	t_file	file;
-	
+
 	mlx_st.file = &file;
 	mlx_st.data = &data;
 	if (argc == 2)

@@ -6,7 +6,7 @@
 /*   By: abturan <abturan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:39:57 by abturan           #+#    #+#             */
-/*   Updated: 2024/11/25 18:51:50 by abturan          ###   ########.fr       */
+/*   Updated: 2024/11/27 18:55:34 by abturan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	put_pix(t_data *data, t_point point, t_color color)
 {
-	if ((point.x + point.y * WIDTH) < WIDTH * HEIGHT
-		&& (point.x + point.y * WIDTH) > 0 && point.x > 0 && point.y > 0)
+	if (point.x < WIDTH && point.y < HEIGHT
+		&& point.x > 0 && point.y > 0)
 		data->addr[(point.x + point.y * WIDTH)] = color.clr;
 }
 
